@@ -1,8 +1,22 @@
-FROM openjdk:8-jdk-alpine 
-RUN apk add --no-cache bash 
-RUN mkdir /app 
-WORKDIR /app 
-ADD https://archive.apache.org/dist/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz /app 
-RUN tar -xvzf spark-3.0.1-bin-hadoop2.7.tgz && mv spark-3.0.1-bin-hadoop2.7 spark && rm spark-3.0.1-bin-hadoop2.7.tgz 
-ENV SPARK_HOME=/app/spark 
-ENV PATH=$SPARK_HOME/bin:$PATH 
+# Usando uma imagem oficial do Spark com Python
+FROM bitnami/spark:latest
+
+# Instalando Python e dependências
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    python3-pip \
+    python3-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Defina o diretório de trabalho
+WORKDIR /app
+
+# Copie seus scripts Python para o contêiner
+COPY . .
+
+# Instale pacotes Python necessários
+RUN pip3 install pandas
+
+# Comando padrão para iniciar o Spark
+CMD ["spark-submit", "seu_script.py"]
