@@ -19,4 +19,4 @@ COPY . .
 RUN pip3 install pandas
 
 # Comando padrão para iniciar o Spark
-CMD ["spark-submit", "seu_script.py"]
+CMD ["spark-submit", "app/app.py"]
