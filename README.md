@@ -127,3 +127,21 @@ Após executar o contêiner ou o script localmente, você verá uma saída semel
 1. **Isolamento de Ambiente:** Docker fornece um ambiente de execução isolado, garantindo que as dependências e configurações sejam consistentes em diferentes máquinas.
 2. **Reprodutibilidade:** o uso de contêineres garante que o código funcione da mesma maneira em qualquer máquina, eliminando problemas de "funciona na minha máquina".
 3. **Facilidade de Distribuição:** compartilhar o contêiner Docker com outras pessoas permite que elas executem o projeto sem precisar configurar o ambiente manualmente.
+
+## Benefícios de construir um datalake utilizando Apache Spark
+1. **Processamento de Alta Velocidade:**
+Spark executa operações em memória sempre que possível, acelerando significativamente o processamento em comparação com frameworks baseados em disco como o Hadoop MapReduce.
+2. **Escalabilidade:** Spark é projetado para escalar horizontalmente, facilitando a adição de nós ao cluster para lidar com grandes volumes de dados e aumentar a capacidade de processamento. Funciona em uma variedade de ambientes (incluindo on-premises, AWS, Google Cloud, Azure, etc.).
+3. **Versatilidade:** Suporta múltiplas linguagens (Python, Java, Scala, R).
+Tem bibliotecas integradas para SQL, machine learning, processamento de grafos e streaming.
+4. **Integração com Diversas Fontes de Dados:** Conectores para HDFS, S3, Google Cloud Storage, bancos de dados SQL e NoSQL, Kafka, entre outros.
+5. **Facilidade de Uso e Desenvolvimento Rápido:**
+Oferece APIs de alto nível fáceis de usar e entender, promovendo desenvolvimento rápido e eficiente. Conta com uma shell interativa para Scala e Python, permitindo desenvolvimento e experimentação iterativa com dados.
+6. **Robustez e Tolerância a Falhas:**
+Lida eficientemente com falhas de nós, reprocessando operações a partir de dados já processados (RDDs). Tem uma comunidade ativa de desenvolvedores e amplo suporte, incluindo documentação detalhada, tutoriais e fóruns.
+7. **Custo-Efetividade:**
+Projeto de código aberto sem custos de licenciamento, podendo ser executado em hardware comum ou na nuvem, proporcionando flexibilidade de custos. Uso eficiente de recursos como processamento em memória e escalabilidade horizontal reduz custos operacionais.
+8. **Capacidade de Processar Dados Estruturados e Não Estruturados:**
+Processa uma ampla variedade de tipos de dados, incluindo estruturados (tabelas SQL), semiestruturados (JSON, XML) e não estruturados (logs, mídia).
+
+
